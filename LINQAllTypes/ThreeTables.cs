@@ -9,7 +9,7 @@ namespace LINQAllTypes
             List<Football> football3Join = Football.football3joins;
             List<Team> team = Team.team;
             List<TransferClub> transferTeam = TransferClub.transferTeam;
-
+             
             Console.WriteLine("Join operations using 3 tables -------------------");
             Console.WriteLine();
             Console.WriteLine("Inner join : ");
