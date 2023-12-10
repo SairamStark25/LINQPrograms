@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQ3", "LINQ3\LINQ3.csproj", "{AECB3535-E0AA-4472-B8BC-732843F07860}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQ4", "LINQ4\LINQ4.csproj", "{D8AFCB13-62B0-4A72-B5E5-4EDE4BEF5ECD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQAllTypes", "LINQAllTypes\LINQAllTypes.csproj", "{F3B3891E-D0FA-4BA8-9599-6CD087760270}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AECB3535-E0AA-4472-B8BC-732843F07860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AECB3535-E0AA-4472-B8BC-732843F07860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AECB3535-E0AA-4472-B8BC-732843F07860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AECB3535-E0AA-4472-B8BC-732843F07860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8AFCB13-62B0-4A72-B5E5-4EDE4BEF5ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8AFCB13-62B0-4A72-B5E5-4EDE4BEF5ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8AFCB13-62B0-4A72-B5E5-4EDE4BEF5ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8AFCB13-62B0-4A72-B5E5-4EDE4BEF5ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B3891E-D0FA-4BA8-9599-6CD087760270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B3891E-D0FA-4BA8-9599-6CD087760270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B3891E-D0FA-4BA8-9599-6CD087760270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B3891E-D0FA-4BA8-9599-6CD087760270}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E4A2502-FDE5-4BC0-9C71-2325A0EA81B8}
+	EndGlobalSection
+EndGlobal
