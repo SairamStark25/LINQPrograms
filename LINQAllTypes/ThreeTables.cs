@@ -99,6 +99,29 @@ namespace LINQAllTypes
                                 "New Team : " + item.TransferClub
                                 );
             }
+
+            Console.WriteLine();
+            Console.WriteLine("Cross join : ");
+            Console.WriteLine();
+
+            var crossJoin = from footballList in football3Join
+                            from teamList in team
+                            from transferClub in transferTeam
+                            select new
+                            {
+                                Player = footballList.PlayerName,
+                                Country = teamList.CountryName,
+                                TransferClub = transferClub.NewClub
+                            };
+
+            foreach (var item in crossJoin)
+            {
+                Console.WriteLine(
+                                "Player Name : " + item.Player + " -- " +
+                                "Player Country : " + item.Country + " -- " +
+                                "New Team : " + item.TransferClub
+                    );
+            }
         }
     }
 }
