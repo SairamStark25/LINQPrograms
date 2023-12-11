@@ -46,9 +46,9 @@ namespace LINQAllTypes
             foreach (var item in leftJoin)
             {
                 Console.WriteLine(
+                                "Country ID : " + item.ID + " ---> " +
                                 "Player Name : " + item.Player + " ---> " +
-                                "Player Country : " + item.Country + " ---> " +
-                                "Country ID : " + item.ID 
+                                "Player Country : " + item.Country + " ---> "
                                 );
             }
             Console.WriteLine();
@@ -61,7 +61,6 @@ namespace LINQAllTypes
                             {
                                 ID = x != null ? x.CountryId : 0,
                                 Player = x != null ? x.PlayerName : "NULL",
-                                Goals = x != null ? x.PlayerGoals : 0,
                                 Country = teamList.CountryName
                             };
 
@@ -70,9 +69,63 @@ namespace LINQAllTypes
                 Console.WriteLine(
                                 "Country ID : " + item.ID + " ---> " +
                                 "Player Name : " + item.Player + " ---> " +
-                                "Player Goals : " + item.Goals + " ---> " +
                                 "Player Country : " + item.Country
                                 );
+            }
+            Console.WriteLine();
+            Console.WriteLine("Full join : ");
+            Console.WriteLine();
+            var fullOuterJoin = (from footballList in football
+                                 join teamList in team on footballList.CountryId equals teamList.CountryId into joined
+                                 from x in joined.DefaultIfEmpty()
+                                 select new
+                                 {
+                                     Player = footballList.PlayerName,
+                                     ID = x != null ? x.CountryId : 0,
+                                     Country = x!=null ? x.CountryName : "NULL"
+                                 }).Union
+                     (from teamList in team
+                      join footballList in football on teamList.CountryId equals footballList.CountryId into joined
+                      from y in joined.DefaultIfEmpty()
+                      where y == null
+                      select new
+                      {
+                          Player = y != null ? y.PlayerName : "NULL",
+                          ID = y != null ? y.CountryId : 0,
+                          Country = teamList.CountryName
+                      });
+
+            foreach (var item in fullOuterJoin)
+            {
+                Console.WriteLine(
+                          "Country ID : " + item.ID + " ---> " +
+                          "Player Name : " + item.Player + " ---> " +
+                          "Player Country : " + item.Country + " ---> "
+                 );
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Cross join : ");
+            Console.WriteLine();
+
+            var CrossJoin = from footballList in football
+                            from teamList in team
+                            select new
+                            {
+                                Jersey = footballList.JerseyNumber,
+                                Player = footballList.PlayerName,
+                                Country = teamList.CountryName,
+                                Goals = footballList.PlayerGoals
+                            };
+
+            foreach (var item in CrossJoin)
+            {
+                Console.WriteLine(
+                                  "Jersey Number : " + item.Jersey + " ---> " +
+                                  "Player Name : " + item.Player + " ---> " +
+                                  "Player Country : " + item.Country + " ---> " +
+                                  "Players Goals : " + item.Goals
+                                 );
             }
 
             Console.WriteLine();
