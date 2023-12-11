@@ -38,15 +38,13 @@ namespace LINQAllTypes
                            from x in joined.DefaultIfEmpty()
                            select new
                            {                                   
-                               ID = x != null ? x.CountryId : 0, // condition ? true : false  
                                Player = footballList.PlayerName,
-                               Country = x != null ? x.CountryName : "NULL",
+                               Country = x != null ? x.CountryName : "NULL", // condition ? true : false  
                            };
 
             foreach (var item in leftJoin)
             {
                 Console.WriteLine(
-                                "Country ID : " + item.ID + " ---> " +
                                 "Player Name : " + item.Player + " ---> " +
                                 "Player Country : " + item.Country + " ---> "
                                 );
@@ -59,7 +57,6 @@ namespace LINQAllTypes
                             from x in joined.DefaultIfEmpty()
                             select new
                             {
-                                ID = x != null ? x.CountryId : 0,
                                 Player = x != null ? x.PlayerName : "NULL",
                                 Country = teamList.CountryName
                             };
@@ -67,7 +64,6 @@ namespace LINQAllTypes
             foreach (var item in rightJoin)
             {
                 Console.WriteLine(
-                                "Country ID : " + item.ID + " ---> " +
                                 "Player Name : " + item.Player + " ---> " +
                                 "Player Country : " + item.Country
                                 );
@@ -81,24 +77,20 @@ namespace LINQAllTypes
                                  select new
                                  {
                                      Player = footballList.PlayerName,
-                                     ID = x != null ? x.CountryId : 0,
                                      Country = x!=null ? x.CountryName : "NULL"
                                  }).Union
                      (from teamList in team
                       join footballList in football on teamList.CountryId equals footballList.CountryId into joined
                       from y in joined.DefaultIfEmpty()
-                      where y == null
                       select new
                       {
                           Player = y != null ? y.PlayerName : "NULL",
-                          ID = y != null ? y.CountryId : 0,
                           Country = teamList.CountryName
                       });
 
             foreach (var item in fullOuterJoin)
             {
                 Console.WriteLine(
-                          "Country ID : " + item.ID + " ---> " +
                           "Player Name : " + item.Player + " ---> " +
                           "Player Country : " + item.Country + " ---> "
                  );

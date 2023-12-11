@@ -1,6 +1,6 @@
 ﻿namespace LINQAllTypes
 {
-    public class FootballSet : Football
+    public class FootballSet
     {
         public void MergeSet()
         {
